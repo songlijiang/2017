@@ -1,0 +1,1 @@
+scp ./crawler-api/target/crawler-api.war   root@sw:/usr/local/share/tomcat/apache-tomcat-8.0.39/webapps/ROOT.war

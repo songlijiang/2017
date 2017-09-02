@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/2017.iml" filepath="$PROJECT_DIR$/2017.iml" />
+      <module fileurl="file://$PROJECT_DIR$/biz/biz.iml" filepath="$PROJECT_DIR$/biz/biz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/biz-aio/biz-aio.iml" filepath="$PROJECT_DIR$/biz-aio/biz-aio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crawler-api/crawler-api.iml" filepath="$PROJECT_DIR$/crawler-api/crawler-api.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.slj.crawler.dao.LoupanDao"> 
+  <select id="queryByCityNameAndTimeStamp" resultType="com.slj.crawler.entity.Loupan"> 
+    <!--added by pn-plugin-->select `timeStamp`, `price`, `area`, `region`, `name`, `resourceId`, `cityName`, `resourceType`, `addTime`, `updateTime`, `id` from N_Loupan where `cityName` = #{cityName} and `timeStamp` = #{timeStamp} order by id ASC
+  </select>  
+  <select id="findById" resultType="com.slj.crawler.entity.Loupan"> 
+    <!--added by pn-plugin-->select `timeStamp`, `price`, `area`, `region`, `name`, `resourceId`, `cityName`, `resourceType`, `addTime`, `updateTime`, `id` from N_Loupan where `id` = #{id} order by id ASC
+  </select>  
+  <insert id="batchInsert"> 
+    <!--added by pn-plugin-->insert into N_Loupan (`timeStamp`, `price`, `area`, `region`, `name`, `resourceId`, `cityName`, `resourceType`, `addTime`, `updateTime`) values 
+    <foreach collection="list" item="item" separator=",">(#{item.timeStamp}, #{item.price}, #{item.area}, #{item.region}, #{item.name}, #{item.resourceId}, #{item.cityName}, #{item.resourceType}, now(), now())</foreach> 
+  </insert>  
+  <insert id="insert"> 
+    <!--added by pn-plugin-->insert into N_Loupan (`timeStamp`, `price`, `area`, `region`, `name`, `resourceId`, `cityName`, `resourceType`, `addTime`, `updateTime`) values (#{timeStamp}, #{price}, #{area}, #{region}, #{name}, #{resourceId}, #{cityName}, #{resourceType}, now(), now()) 
+    <selectKey resultType="int" keyProperty="id">SELECT @@IDENTITY AS id</selectKey> 
+  </insert>  
+  <update id="update"> 
+    <!--added by pn-plugin-->update N_Loupan set `timeStamp` = #{timeStamp} , `price` = #{price} , `area` = #{area} , `region` = #{region} , `name` = #{name} , `resourceId` = #{resourceId} , `cityName` = #{cityName} , `resourceType` = #{resourceType} , `updateTime` = now() Where `id` = #{id}
+  </update>  
+  <select id="queryInIds" resultType="com.slj.crawler.entity.Loupan"> 
+    <!--added by pn-plugin-->select `timeStamp`, `price`, `area`, `region`, `name`, `resourceId`, `cityName`, `resourceType`, `addTime`, `updateTime`, `id` from N_Loupan where 
+    <choose> 
+      <when test="ids !=null and ids.size() &gt; 0">`id` in 
+        <foreach item="id" collection="ids" open="(" separator="," close=")">#{id}</foreach> 
+      </when>  
+      <otherwise>1 = 2</otherwise> 
+    </choose> order by id
+  </select>  
+  <select id="queryAll" resultType="com.slj.crawler.entity.Loupan"> 
+    <!--added by pn-plugin-->select `timeStamp`, `price`, `area`, `region`, `name`, `resourceId`, `cityName`, `resourceType`, `addTime`, `updateTime`, `id` from N_Loupan order by id ASC
+  </select> 
+</mapper>

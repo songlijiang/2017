@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.slj.dao.ContentDao"> 
+  <select id="findById" resultType="com.slj.entity.Content"> 
+    <!--added by pn-plugin-->select `content`, `key`, `type`, `addTime`, `updateTime`, `id` from PN_Content where `id` = #{id} order by id ASC
+  </select>  
+  <insert id="batchInsert"> 
+    <!--added by pn-plugin-->insert into PN_Content (`content`, `key`, `type`, `addTime`, `updateTime`) values 
+    <foreach collection="list" item="item" separator=",">(#{item.content}, #{item.key}, #{item.type}, now(), now())</foreach> 
+  </insert>  
+  <insert id="insert"> 
+    <!--added by pn-plugin-->insert into PN_Content (`content`, `key`, `type`, `addTime`, `updateTime`) values (#{content}, #{key}, #{type}, now(), now()) 
+    <selectKey resultType="int" keyProperty="id">SELECT @@IDENTITY AS id</selectKey> 
+  </insert>  
+  <update id="update"> 
+    <!--added by pn-plugin-->update PN_Content set `content` = #{content} , `key` = #{key} , `type` = #{type} , `updateTime` = now() Where `id` = #{id}
+  </update>  
+  <select id="queryInIds" resultType="com.slj.entity.Content"> 
+    <!--added by pn-plugin-->select `content`, `key`, `type`, `addTime`, `updateTime`, `id` from PN_Content where 
+    <choose> 
+      <when test="ids !=null and ids.size() &gt; 0">`id` in 
+        <foreach item="id" collection="ids" open="(" separator="," close=")">#{id}</foreach> 
+      </when>  
+      <otherwise>1 = 2</otherwise> 
+    </choose> order by id
+  </select>  
+  <select id="queryAll" resultType="com.slj.entity.Content"> 
+    <!--added by pn-plugin-->select `content`, `key`, `type`, `addTime`, `updateTime`, `id` from PN_Content order by id ASC
+  </select> 
+</mapper>
