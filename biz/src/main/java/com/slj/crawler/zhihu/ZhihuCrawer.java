@@ -14,7 +14,8 @@ public class ZhihuCrawer implements PageProcessor {
     // 设置编码 ，超时时间，重试次数，
     private Site site = Site.me().setRetryTimes(10).setSleepTime(5000).setTimeOut(5000)
             .addCookie("Domain", "zhihu.com")
-            .addCookie("z_c0", "Mi4wQUZCQ05UN3dqUXNBVUFMVzJtMXpDeGNBQUFCaEFsVk5DODBtV1FCQkFwYUs0ZlRQeTRtRGFhQzN3V3BOQlZuZ3NR|1493548112|215cb731810d778646df5362659099fedefa43ef")
+            .setCharset("UTF-8")
+            .addCookie("z_c0", "2|1:0|10:1504346220|4:z_c0|92:Mi4xYzFuaEF3QUFBQUFBRUVMT2czOGJEQ1lBQUFCZ0FsVk5iQTNTV1FCVlVGRE42Z2JoN3RHUDFDYWZON0NwdDdTamFR|e926bf58aea6ac22ce6254d6bcd3f3f143ba4c96845037162572deba3e64ccf3")
             .setUserAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.89 Safari/537.36");
     //问题的索引
     //https://www.zhihu.com/question/20902967
