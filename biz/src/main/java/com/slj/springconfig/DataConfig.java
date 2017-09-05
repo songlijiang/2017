@@ -1,9 +1,8 @@
 package com.slj.springconfig;
 
+import com.slj.config.AllConfig;
 import com.slj.db.JdbcConfig;
 import com.slj.db.JdbcUtils;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.defaults.DefaultSqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.context.annotation.Bean;
@@ -11,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
+import java.util.Properties;
 
 @Configuration
 public class DataConfig {
@@ -32,11 +32,11 @@ public class DataConfig {
 
     @Bean(destroyMethod = "close")
     public DataSource dataSource() throws PropertyVetoException {
-            //Properties properties = AllConfig.properties;
+            Properties properties = AllConfig.properties;
             JdbcConfig jdbcConfig = new JdbcConfig();
-            jdbcConfig.setUser("root");
-            jdbcConfig.setUrl("jdbc:mysql://23.106.142.84:3306/java?characterEncoding=UTF8&socketTimeout=60000&allowMultiQueries=true");
-            jdbcConfig.setPassword("190360080");
+            jdbcConfig.setUser(properties.getProperty("slj.jdbc.user"));
+            jdbcConfig.setUrl(properties.getProperty("slj.jdbc.url"));
+            jdbcConfig.setPassword(properties.getProperty("slj.jdbc.password"));
        return JdbcUtils.newDataSource("master", jdbcConfig);
     }
 
