@@ -4,9 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/../piaoniu01/piaoniu-merchant/src/main/java/com/piaoniu/merchant/service/impl/SalerTicketServiceImpl.java" description="return Resp.fail(&quot;页面数据可能过期，请刷新后再试&quot;);" line="262" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e642d35c-d49c-4d33-9827-1ccc8cd54718" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="e642d35c-d49c-4d33-9827-1ccc8cd54718" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/biz/target/" />
     <ignored path="$PROJECT_DIR$/crawler-api/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -112,7 +110,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="34" lean-forward="false" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
+              <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -196,8 +194,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="19" />
-    <option name="y" value="78" />
+    <option name="x" value="202" />
+    <option name="y" value="63" />
     <option name="width" value="1276" />
     <option name="height" value="777" />
   </component>
@@ -1285,15 +1283,15 @@
       <workItem from="1504066292523" duration="58000" />
       <workItem from="1504282286455" duration="1518000" />
       <workItem from="1504338780763" duration="7920000" />
-      <workItem from="1504584642457" duration="352000" />
+      <workItem from="1504584642457" duration="389000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24934000" />
+    <option name="totallyTimeSpent" value="24971000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="19" y="78" width="1276" height="777" extended-state="0" />
+    <frame x="202" y="63" width="1276" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1678,7 +1676,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="34" lean-forward="false" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
+          <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
           <folding />
         </state>
       </provider>
