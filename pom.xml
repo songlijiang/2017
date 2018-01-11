@@ -11,6 +11,7 @@
 
 
 <modules>
+    <module>utils</module>
     <module>biz</module>
     <module>biz-aio</module>
     <module>crawler-api</module>

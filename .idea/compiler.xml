@@ -9,6 +9,7 @@
         <module name="biz" />
         <module name="biz-aio" />
         <module name="crawler-api" />
+        <module name="utils" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +18,7 @@
       <module name="biz-aio" target="1.8" />
       <module name="crawler-api" target="1.8" />
       <module name="crawler-job" target="1.8" />
+      <module name="utils" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

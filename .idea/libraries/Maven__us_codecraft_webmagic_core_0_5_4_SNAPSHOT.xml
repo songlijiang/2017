@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: us.codecraft:webmagic-core:0.5.4-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/us/codecraft/webmagic-core/0.5.4-SNAPSHOT/webmagic-core-0.5.4-SNAPSHOT.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/us/codecraft/webmagic-core/0.5.4-SNAPSHOT/webmagic-core-0.5.4-20160615.101157-1.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/us/codecraft/webmagic-core/0.5.4-SNAPSHOT/webmagic-core-0.5.4-SNAPSHOT-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/us/codecraft/webmagic-core/0.5.4-SNAPSHOT/webmagic-core-0.5.4-20160615.101157-1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/us/codecraft/webmagic-core/0.5.4-SNAPSHOT/webmagic-core-0.5.4-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/us/codecraft/webmagic-core/0.5.4-SNAPSHOT/webmagic-core-0.5.4-20160615.101157-1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

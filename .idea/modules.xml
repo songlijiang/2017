@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/biz/biz.iml" filepath="$PROJECT_DIR$/biz/biz.iml" />
       <module fileurl="file://$PROJECT_DIR$/biz-aio/biz-aio.iml" filepath="$PROJECT_DIR$/biz-aio/biz-aio.iml" />
       <module fileurl="file://$PROJECT_DIR$/crawler-api/crawler-api.iml" filepath="$PROJECT_DIR$/crawler-api/crawler-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/utils/utils.iml" filepath="$PROJECT_DIR$/utils/utils.iml" />
     </modules>
   </component>
 </project>
