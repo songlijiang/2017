@@ -11,6 +11,10 @@ import com.slj.zk.ZkConfig;
 import org.apache.commons.lang3.tuple.Pair;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,7 +28,11 @@ import java.util.stream.Collectors;
 /**
  * Created by slj on 17/1/2.
  */
+
+@Configuration
+@EnableAutoConfiguration
 @RestController
+@ComponentScan(basePackages = {"com.slj","com.slj.api"})
 @RequestMapping(value = "/",method = RequestMethod.GET)
 public class IndexController {
 
@@ -92,4 +100,9 @@ public class IndexController {
     public String testString(@RequestParam String test){
         return test;
     }
+
+    public static void main(String[] args) {
+        SpringApplication.run(IndexController.class, args);
+    }
+
 }

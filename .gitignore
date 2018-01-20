@@ -1,2 +1,5 @@
-biz/src/main/resources/beta.config
+biz/src/main/resources/*
+biz/target/*
+crawler-api/target/*
+utils/target/*
 .idea

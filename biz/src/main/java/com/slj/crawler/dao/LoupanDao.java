@@ -29,10 +29,10 @@ public interface LoupanDao extends EntityDao<Loupan>{
 
     List<Loupan> queryByCityNameAndTimeStamp(@Param("cityName") String cityName, @Param("timeStamp") Date timeStamp);
 
-    @Select("select YEAR(addTime) as year , MONTH(addTime) as month ,AVG(price) as price from N_Loupan where cityName =#{cityName} and addTime>#{start} and price >3000 and price<30000   group by  YEAR(addTime), MONTH(addTime)")
+    @Select("select YEAR(addTime) as year , MONTH(addTime) as month ,AVG(price) as price from N_Loupan where cityName =#{cityName} and `timeStamp`>#{start} and price >3000 and price<30000   group by  YEAR(addTime), MONTH(addTime)")
     List<LoupanAverage> queryMonthAverage(@Param("start")Date start,@Param("cityName") String cityName);
 
-    @Select("select YEAR(addTime) as year , MONTH(addTime) as month ,DAY(addTime) as day,AVG(price) as price from N_Loupan where cityName =#{cityName} and addTime>#{start} and price >3000 and price<30000 group by  YEAR(addTime), MONTH(addTime),Day(addTime)")
+    @Select("select YEAR(addTime) as year , MONTH(addTime) as month ,DAY(addTime) as day,AVG(price) as price from N_Loupan where cityName =#{cityName} and `timeStamp`>#{start} and price >3000 and price<30000 group by  YEAR(`timeStamp`), MONTH(`timeStamp`),Day(`timeStamp`)")
     List<LoupanAverage> queryDayAverage(@Param("start")Date start,@Param("cityName") String cityName);
 }
 

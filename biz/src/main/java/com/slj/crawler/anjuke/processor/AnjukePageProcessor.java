@@ -23,6 +23,7 @@ import us.codecraft.webmagic.processor.PageProcessor;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -58,20 +59,20 @@ public class AnjukePageProcessor extends AbstractDiscoverCrawler implements Page
                String address = info.getElementsByClass("address").first().text();
                String area = info.getElementsByClass("address").first().nextElementSibling().text();
                Element favor = e.getElementsByClass("favor-pos").first();
-               String priceText = "0";
+               String priceText = "均价0元";
                try {
-                   priceText = favor.getElementsByClass("price").first().getElementsByTag("span").first().text();
+                   priceText = favor.text();
                } catch (Exception e1) {
                    e1.printStackTrace();
                }
                Map tagMap = Maps.newHashMap();
-               BigDecimal price = StringUtils.isNumeric(priceText) ?new BigDecimal(priceText):BigDecimal.ZERO;
+               BigDecimal price = StringUtils.isNumeric(executeMatch("均价(\\d)元",priceText,1))?new BigDecimal(priceText):BigDecimal.ZERO;
                return Pair.of(loupanService.getLouPan(resourceId,name,address,area,price,cityName, Loupan.TYPE_ANJUKE),tagMap);
            } catch (Exception e1) {
                e1.printStackTrace();
            }
            return null;
-       }).filter(e->e!=null).collect(Collectors.toList())
+       }).filter(Objects::nonNull).collect(Collectors.toList())
        );
        if(CollectionUtils.isNotEmpty(document.select("span.next-page.stat-disable"))){
            return;

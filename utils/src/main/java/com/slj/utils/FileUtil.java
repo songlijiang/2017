@@ -1,14 +1,11 @@
 package com.slj.utils;
 
-import com.sun.deploy.util.StringUtils;
 
 import java.io.*;
 import java.net.URL;
 import java.security.SecureRandom;
 import java.text.DecimalFormat;
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class FileUtil {
     public static final int ONE_KB = 1024;

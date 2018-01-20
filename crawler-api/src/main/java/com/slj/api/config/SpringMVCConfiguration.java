@@ -17,7 +17,6 @@ import java.util.List;
 @EnableAspectJAutoProxy
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.slj..* ","com.slj.api.controller"})
 public class SpringMVCConfiguration extends WebMvcConfigurerAdapter {
 
 

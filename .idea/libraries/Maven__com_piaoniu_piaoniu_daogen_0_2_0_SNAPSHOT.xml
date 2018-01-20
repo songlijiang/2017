@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: com.piaoniu:piaoniu-daogen:0.2.0-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/piaoniu/piaoniu-daogen/0.2.0-SNAPSHOT/piaoniu-daogen-0.2.0-20170214.075636-4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/piaoniu/piaoniu-daogen/0.2.0-SNAPSHOT/piaoniu-daogen-0.2.0-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/com/piaoniu/piaoniu-daogen/0.2.0-SNAPSHOT/piaoniu-daogen-0.2.0-20170214.075636-4-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/piaoniu/piaoniu-daogen/0.2.0-SNAPSHOT/piaoniu-daogen-0.2.0-SNAPSHOT-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/piaoniu/piaoniu-daogen/0.2.0-SNAPSHOT/piaoniu-daogen-0.2.0-20170214.075636-4-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/piaoniu/piaoniu-daogen/0.2.0-SNAPSHOT/piaoniu-daogen-0.2.0-SNAPSHOT-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

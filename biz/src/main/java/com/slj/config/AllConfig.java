@@ -15,18 +15,11 @@ public class AllConfig {
     public static final Properties properties = System.getProperties();
     public static final AtomicBoolean inited = new AtomicBoolean(false);
 
-    private static String configFile =  getEnv() + ".config";
+    private static String configFile =  "data.config";
 
-    public static String getEnv() {
-        return System.getProperty("slj.system.env", "beta");
-    }
 
     static {
         init();
-    }
-
-    private static String getFromFile(String key) {
-        return properties.getProperty(key);
     }
 
     public static String getZkServers() {
