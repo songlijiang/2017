@@ -66,7 +66,8 @@ public class AnjukePageProcessor extends AbstractDiscoverCrawler implements Page
                    e1.printStackTrace();
                }
                Map tagMap = Maps.newHashMap();
-               BigDecimal price = StringUtils.isNumeric(executeMatch("均价(\\d)元",priceText,1))?new BigDecimal(priceText):BigDecimal.ZERO;
+               String matchText = executeMatch("均价(\\d+)元",priceText,1);
+               BigDecimal price = StringUtils.isNumeric(matchText)?new BigDecimal(matchText):BigDecimal.ZERO;
                return Pair.of(loupanService.getLouPan(resourceId,name,address,area,price,cityName, Loupan.TYPE_ANJUKE),tagMap);
            } catch (Exception e1) {
                e1.printStackTrace();
@@ -79,7 +80,7 @@ public class AnjukePageProcessor extends AbstractDiscoverCrawler implements Page
        }else {
            int currentPage = 1;
            try {
-              currentPage = Integer.parseInt(executeMatch("fang.anjuke.com/loupan/all/p(\\d)", page.getRequest().getUrl(), 1));
+              currentPage = Integer.parseInt(executeMatch("fang.anjuke.com/loupan/all/p(\\d+)", page.getRequest().getUrl(), 1));
            } catch (Exception e) {
                e.printStackTrace();
            }

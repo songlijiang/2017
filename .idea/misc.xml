@@ -49,6 +49,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/biz-aio/pom.xml" />
         <option value="$PROJECT_DIR$/crawler-job/pom.xml" />
       </set>
     </option>

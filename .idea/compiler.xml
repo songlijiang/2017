@@ -7,13 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="biz" />
-        <module name="biz-aio" />
         <module name="crawler-api" />
         <module name="utils" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="2017" target="1.8" />
+      <module name="2017" target="1.5" />
       <module name="biz" target="1.8" />
       <module name="biz-aio" target="1.8" />
       <module name="crawler-api" target="1.8" />

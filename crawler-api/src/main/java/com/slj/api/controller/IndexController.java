@@ -90,11 +90,10 @@ public class IndexController {
     }
     @RequestMapping(value = "/index")
     public Map<String,Object> index(@RequestParam(defaultValue = "xa") String cityName,@RequestParam(defaultValue = "0") long monthStartDate ,@RequestParam(defaultValue = "0") long dayStartDate){
-        return ImmutableMap.<String,Object>builder().put("average",loupanService.average(cityName,new Date()))
-                .put("change",loupanService.change(cityName,new Date()).stream().map(e->new LoupanChange(e.getLeft(),e.getRight())).collect(Collectors.toList()))
-                .put("month",loupanDao.queryMonthAverage(monthStartDate==0?new DateTime().minusYears(1).toDate():new Date(monthStartDate),cityName))
-                .put("day",loupanDao.queryDayAverage(dayStartDate==0?new DateTime().minusYears(1).toDate():new Date(dayStartDate),cityName))
-                .build();
+        System.out.println("start ="+System.currentTimeMillis());
+        Map<String,Object> result =loupanService.render(cityName);
+        System.out.println("end ="+System.currentTimeMillis());
+        return result;
     }
     @RequestMapping(value = "/test",method = RequestMethod.GET)
     public String testString(@RequestParam String test){

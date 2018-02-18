@@ -1,6 +1,5 @@
 package com.slj.api.config;
 
-import com.slj.springconfig.DataConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class SpringInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {

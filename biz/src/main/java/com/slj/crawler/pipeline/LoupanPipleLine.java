@@ -6,6 +6,7 @@ import com.slj.crawler.entity.Loupan;
 import com.slj.crawler.entity.Tag;
 import com.slj.util.DateUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,9 @@ public class LoupanPipleLine implements Pipeline{
     @Override
     public void process(ResultItems resultItems, Task task) {
       List<Pair<Loupan,Map<String,String>>> housePair = resultItems.get("housePair");
+      if(CollectionUtils.isEmpty(housePair)){
+          return;
+      }
       log.info("housepair = {}",housePair.size());
       housePair.stream().forEach(e->{
          Loupan loupanDb = loupanDao.findByResourceTypeAndResourceIdMoreDay(e.getKey().getResourceType(),e.getKey().getResourceId(), DateUtils.getDayStart(new Date()));

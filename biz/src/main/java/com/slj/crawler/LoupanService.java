@@ -1,13 +1,16 @@
 package com.slj.crawler;
 
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.slj.crawler.dao.LoupanDao;
 import com.slj.crawler.entity.Loupan;
+import com.slj.domain.LoupanChange;
 import com.slj.util.DateUtils;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -44,6 +47,15 @@ public class LoupanService {
         }
        Map<String,Loupan> beforeMap = loupansBefore.stream().collect(Collectors.toMap(Loupan::getResourceId, Function.identity()));
        return loupansNow.stream().map(e-> Pair.of(beforeMap.getOrDefault(e.getResourceId(),new Loupan()),e)).filter(e->e.getLeft().getPrice().compareTo(e.getRight().getPrice())!=0).collect(Collectors.toList());
+    }
+
+    @Cacheable(value = "stat",key= "#cityName")
+    public Map<String,Object> render(String cityName){
+        return ImmutableMap.<String,Object>builder().put("average",average(cityName,new Date()))
+            .put("change",change(cityName,new Date()).stream().map(e->new LoupanChange(e.getLeft(),e.getRight())).collect(Collectors.toList()))
+            .put("month",loupanDao.queryMonthAverage(new DateTime().minusYears(1).toDate(),cityName))
+            .put("day",loupanDao.queryDayAverage(new DateTime().minusYears(1).toDate(),cityName))
+            .build();
     }
 
     public Loupan getLouPan(String resourceId , String name , String region , String area , BigDecimal price,String cityName,int type){
